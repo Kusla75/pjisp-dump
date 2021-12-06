@@ -1,0 +1,10 @@
+ra301-2020 Milan Milovic 9.25
+ee333-2020 Violeta Simic 8.00
+pr311-2020 Bojan Antonic 8.75
+ra342-2020 Goran Kancarevic 6.75
+ee312-2020 Aleksa Boric 8.25
+ra363-2020 Milica Janjic 9.75
+pr321-2020 Stefan Lakovic 6.75
+ee309-2020 Lazar Marcetic 8.00
+pr343-2020 Pavle Petrovic 9.25
+   0.00

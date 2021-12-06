@@ -1,0 +1,9 @@
+ra301-2020 Milan Milovic 10 9 9 9
+ee333-2020 Violeta Simic 8 7 9 8
+pr311-2020 Bojan Antonic 10 8 8 9
+ra342-2020 Goran Kancarevic 7 6 6 8
+ee312-2020 Aleksa Boric 7 8 8 10
+ra363-2020 Milica Janjic 9 10 10 10
+pr321-2020 Stefan Lakovic 6 7 7 7
+ee309-2020 Lazar Marcetic 8 7 8 9
+pr343-2020 Pavle Petrovic 9 9 9 10

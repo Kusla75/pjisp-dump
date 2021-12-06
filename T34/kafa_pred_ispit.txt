@@ -1,0 +1,5 @@
+espresso                14  1539.86      980
+coldBrew                 4   860.00      900    UPOZORENJE, jaka kafa
+frenchPress             13  2470.00      975
+moka                     6   879.00      912    UPOZORENJE, jaka kafa
+domaca                  18  1440.00      990
