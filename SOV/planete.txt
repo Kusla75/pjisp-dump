@@ -1,0 +1,4 @@
+Merkur  20 100 3
+Zemlja -29 180 5
+Mars   124 270 6
+Saturn  20 350 9
