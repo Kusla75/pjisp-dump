@@ -1,0 +1,8 @@
+ 90 Brokoli       povrce
+ 89 Kivi          voce
+ 60 Jagoda        voce
+ 50 Pomorandza    voce
+ 40 Limun         voce
+
+Namirnica sa najviše vitamina C je: 
+ 90 Brokoli       povrce

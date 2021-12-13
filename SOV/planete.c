@@ -7,29 +7,43 @@
 
 typedef struct planeta_st {
     char naziv[MAX_NAZIV];
-    int x, y, z;
+    int x;
+    int y;
+    int z;
     struct planeta_st* sledeci;
 
 } PLANETA;
 
-void ucitaj(PLANETA** glava, char* f_name, char* mode) {
+PLANETA* novi_elem(char* naziv, int x, int y, int z) {
+    PLANETA* novi = (PLANETA*) malloc(sizeof(PLANETA));
 
-    *glava = (PLANETA*) malloc(sizeof(PLANETA));
+    strcpy(novi->naziv, naziv);
+    novi->x = x;
+    novi->y = y;
+    novi->z = z;
+    novi->sledeci = NULL;
+
+    return novi;
+}
+
+void ucitaj(PLANETA** glava, char* f_name) {
+
     PLANETA* trenutni = *glava;
+    char naziv[MAX_NAZIV];
+    int x, y, z;
 
-    FILE* f = fopen(f_name, mode);
-    int f_status = 0;
-    while(f_status != EOF) {
-        PLANETA* novi = (PLANETA*) malloc(sizeof(PLANETA));
-        
-        f_status = fscanf(f, "%s %d %d %d",
-            novi->naziv,
-            &(novi->x),
-            &(novi->y),
-            &(novi->z));
+    FILE* f = fopen(f_name, "r");
+    while(fscanf(f, "%s %d %d %d", naziv, &x, &y, &z) != EOF) {
 
-        trenutni->sledeci = novi;
-        trenutni = novi;
+        PLANETA* novi = novi_elem(naziv, x, y, z);
+        if(*glava == NULL) {
+            *glava = novi; 
+            trenutni = novi;
+        }
+        else {
+            trenutni->sledeci = novi;
+            trenutni = novi;
+        }
     }
     fclose(f);
 }
@@ -48,7 +62,7 @@ void pronadji_i_ispisi(PLANETA* glava, char* f_name) {
     PLANETA* p2 = NULL;
 
     while(p != NULL) {
-        PLANETA* q = p;
+        PLANETA* q = p->sledeci;
 
         while(q != NULL) {
             double r = udaljenost(*p, *q);
@@ -62,18 +76,28 @@ void pronadji_i_ispisi(PLANETA* glava, char* f_name) {
         p = p->sledeci;
     }
 
-    FILE* f = fopen(f_name, "r");
+    FILE* f = fopen(f_name, "w");
     fprintf(f, "%s %d %d %d\n", p1->naziv, p1->x, p1->y, p1->z);
     fprintf(f, "%s %d %d %d\n", p2->naziv, p2->x, p2->y, p2->z);
     fprintf(f, "%.2f\n", max_razdaljina);
     fclose(f);
 }
 
+void brisanje_liste(PLANETA** glava) {
+    PLANETA* temp;
+    while(*glava != NULL) {
+        temp = *glava;
+        *glava = (*glava)->sledeci;
+        free(temp);
+    }
+}
+
 int main(int argc, char* argv[]) {
     PLANETA* glava = NULL;
 
-    ucitaj(&glava, argv[1], "r");
+    ucitaj(&glava, argv[1]);
     pronadji_i_ispisi(glava, argv[2]);
+    brisanje_liste(&glava);
 
     return 0;
 }

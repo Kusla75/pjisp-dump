@@ -1,0 +1,10 @@
+4.8 Eva        srpski
+4.7 LaCattura  italijanski
+4.5 Inimigos   americki
+4.4 FutureFood americki
+4.3 Cremansa   italijanski
+4.2 Kokoda     srpski
+3.9 Sekunda    italijanski
+
+Najgore ocenjen restoran u gradu je:
+3.900000 Sekunda italijanski
